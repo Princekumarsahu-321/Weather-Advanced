@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+</head>
+<body>
+
+<div class="app" id="app" data-theme="light">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="topbar-left">
+        <i class="ti ti-cloud"></i>
+        <span>Weather</span>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">
+        <i class="ti ti-moon" id="themeIcon"></i>
+        <span id="themeLabel">Dark</span>
+      </button>
+    </div>
+    <div class="body">
+      <div class="search-row">
+        <input type="text" id="city" placeholder="Enter city name…"
+          onkeydown="if(event.key==='Enter') getWeather()" autocomplete="off"/>
+        <button onclick="getWeather()" id="searchBtn">
+          <i class="ti ti-search"></i> Search
+        </button>
+      </div>
+      <div id="result">
+        <div class="empty">
+          <i class="ti ti-world"></i>
+          Search a city to see weather
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
